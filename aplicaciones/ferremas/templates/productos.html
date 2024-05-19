@@ -11,9 +11,11 @@
         <p>agregar producto</p>
         <form action="/agregarproducto/" method="post">{% csrf_token %}
             <div>
+                <p>nombre:</p>
                 <input type="text" name="nombreproducto" required>
             </div>
             <div>
+                <p>precio:</p>
                 <input type="number" name="precioproducto" required>
             </div>
             <div>
