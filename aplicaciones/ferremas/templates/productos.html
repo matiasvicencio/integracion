@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <p>agregar producto</p>
+        <form action="/agregarproducto/" method="post">{% csrf_token %}
+            <div>
+                <input type="text" name="nombreproducto" required>
+            </div>
+            <div>
+                <input type="number" name="precioproducto" required>
+            </div>
+            <div>
+                <button type="submit">guardar</button>
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <p>productos</p>
+        <ul>
+            {% for c in producto %}
+
+            <li>{{ c.nombre }} - Precio: {{ c.precio }} </li>
+        
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
